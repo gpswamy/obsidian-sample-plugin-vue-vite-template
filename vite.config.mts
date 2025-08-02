@@ -14,6 +14,9 @@ export default defineConfig(async ({ mode }) => {
 
 	return {
 		plugins: [vue()],
+		define: {
+			"import.meta.env.MODE": JSON.stringify(mode),
+		},
 		root: "src",
 		publicDir: "../public",
 		build: {
