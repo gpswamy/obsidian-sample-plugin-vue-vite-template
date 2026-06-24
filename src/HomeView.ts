@@ -5,7 +5,8 @@ import VueComponent from "./components/VueComponent.vue";
 export const HOME_VIEW_TYPE = "home-view";
 
 export class HomeView extends ItemView {
-	private vueApp: VueApp;
+	// Assigned in onOpen() which is always called before onClose() by Obsidian
+	private vueApp!: VueApp;
 
 	constructor(leaf: WorkspaceLeaf) {
 		super(leaf);

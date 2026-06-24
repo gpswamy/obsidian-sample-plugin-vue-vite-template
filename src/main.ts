@@ -1,13 +1,15 @@
 import { Notice, Plugin } from "obsidian";
 import { HOME_VIEW_TYPE, HomeView } from "./HomeView";
 
+// TODO: Rename this class after cloning the template (e.g. to match your plugin name)
+// eslint-disable-next-line obsidianmd/sample-names
 export default class MyPlugin extends Plugin {
 	async onload() {
 		this.registerView(HOME_VIEW_TYPE, (leaf) => new HomeView(leaf));
 
-		this.addRibbonIcon("dice", "Open Vue Component", () => {
-			this.activateView().then(() => {
-				new Notice("Vue Component opened");
+		this.addRibbonIcon("dice", "Open vue component", () => {
+			void this.activateView().then(() => {
+				new Notice("Vue component opened");
 			});
 		});
 	}
@@ -20,7 +22,7 @@ export default class MyPlugin extends Plugin {
 			active: true,
 		});
 
-		this.app.workspace.revealLeaf(
+		void this.app.workspace.revealLeaf(
 			this.app.workspace.getLeavesOfType(HOME_VIEW_TYPE)[0]
 		);
 	}
