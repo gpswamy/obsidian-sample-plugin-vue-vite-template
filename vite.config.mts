@@ -1,3 +1,4 @@
+import { builtinModules } from "node:module";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
@@ -7,11 +8,7 @@ if you want to view the source, please visit the github repository of this plugi
 */
 `;
 
-// We have to use an async function to be able to use await for the dynamic import
-export default defineConfig(async ({ mode }) => {
-	// Dynamically import the ESM-only package
-	const builtins = (await import("builtin-modules")).default;
-
+export default defineConfig(({ mode }) => {
 	return {
 		plugins: [vue()],
 		define: {
@@ -43,7 +40,7 @@ export default defineConfig(async ({ mode }) => {
 					"@lezer/common",
 					"@lezer/highlight",
 					"@lezer/lr",
-					...builtins,
+					...builtinModules,
 				],
 				output: {
 					banner: banner,

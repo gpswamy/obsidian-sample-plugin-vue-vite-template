@@ -16,8 +16,7 @@
 	"devDependencies": {
 		"@types/node": "^24.0.3",
 		"@vitejs/plugin-vue": "^5.2.4",
-		"builtin-modules": "^5.0.0",
-		"eslint-plugin-obsidianmd": "latest",
+		"eslint-plugin-obsidianmd": "0.1.9",
 		"eslint-plugin-vue": "latest",
 		"globals": "latest",
 		"jiti": "latest",
